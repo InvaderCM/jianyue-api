@@ -3,9 +3,7 @@ package com.soft1721.jianyue.mapper;
 import com.soft1721.jianyue.entity.Article;
 import com.soft1721.jianyue.entity.Img;
 import com.soft1721.jianyue.entity.vo.ArticleVO;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -57,4 +55,8 @@ public interface ArticleMapper {
     })
     @Select("SELECT * FROM t_img WHERE a_id = #{aId}")
     List<Img> selectImgByaId(int aId);
+
+    @Insert("INSERT INTO t_article (u_id,title,content,create_time) VALUES (#{uId},#{title},#{content},#{createTime}) ")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    void insertArticle(Article article);
 }

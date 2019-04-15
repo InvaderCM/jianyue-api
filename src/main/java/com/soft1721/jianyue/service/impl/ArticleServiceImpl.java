@@ -1,11 +1,13 @@
 package com.soft1721.jianyue.service.impl;
 
+import com.soft1721.jianyue.entity.Article;
 import com.soft1721.jianyue.entity.Img;
 import com.soft1721.jianyue.entity.vo.ArticleVO;
 import com.soft1721.jianyue.mapper.ArticleMapper;
 import com.soft1721.jianyue.service.ArticleService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,5 +32,17 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<Img> selectImgByaId(int aId) {
         return articleMapper.selectImgByaId(aId);
+    }
+
+    @Override
+    public void insertArticle(Article article) {
+        articleMapper.insertArticle(article);
+    }
+
+    @Override
+    public List<Article> selectByuId(int uId) {
+        List<Article> list = new ArrayList<>();
+        list = articleMapper.selectByuId(uId);
+        return list;
     }
 }

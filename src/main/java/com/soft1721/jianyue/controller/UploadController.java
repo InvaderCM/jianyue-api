@@ -21,9 +21,9 @@ public class UploadController {
     public String ossUpload(@RequestParam("file") MultipartFile sourceFile) {
         String endpoint = "oss-cn-beijing.aliyuncs.com";
         // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录 https://ram.console.aliyun.com 创建RAM账号。
-        String accessKeyId = "LTAICzOkftRRa60T";
-        String accessKeySecret = "DrMGNFPkCzbTJN0OoV9hkW7dmTjLf4";
-        String bucketName = "niit-soft-huo";
+        String accessKeyId = "LTAIBI2XS1ZaGsbD";
+        String accessKeySecret = "DdUsJHWDHle23PdT35QQEAgOvrTVVi";
+        String bucketName = "smilesys";
         String filedir = "avatar/";
         // 获取文件名
         String fileName = sourceFile.getOriginalFilename();
@@ -49,4 +49,6 @@ public class UploadController {
         ossClient.shutdown();
         return url.toString();
     }
+
+
 }

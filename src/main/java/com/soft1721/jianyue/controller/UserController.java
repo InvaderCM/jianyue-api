@@ -137,6 +137,14 @@ public class UserController {
         return null;
     }
 
+//    @PutMapping (value = "/nickname")
+//    public void updateNickname (@RequestBody String renickname,Integer id) {
+//        User user=userService.getUserById(id);
+//        user.setNickname(renickname);
+//        userService.updateUser(user);
+//    }
+
+
     @RequestMapping(value = "/updatePassword", method = RequestMethod.PUT)
     @ResponseBody
     public ResponseResult updatePassword(@RequestParam("password") String password, @RequestParam("id") Integer id) {

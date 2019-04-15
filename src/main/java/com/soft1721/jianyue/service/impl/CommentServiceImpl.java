@@ -1,5 +1,6 @@
 package com.soft1721.jianyue.service.impl;
 
+import com.soft1721.jianyue.entity.Comment;
 import com.soft1721.jianyue.entity.vo.CommentVO;
 import com.soft1721.jianyue.mapper.CommentMapper;
 import com.soft1721.jianyue.service.CommentService;
@@ -15,5 +16,10 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public List<CommentVO> selectCommentsByAId(int aId) {
         return commentMapper.selectCommentsByAId(aId);
+    }
+
+    @Override
+    public void addComment(Comment comment) {
+        commentMapper.insert(comment);
     }
 }
